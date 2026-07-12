@@ -59,6 +59,35 @@ const CATEGORIES = [
 export default function HomePage() {
   const [events, setEvents] = useState(mockEvents.slice(0, 3))
   const [openFaq, setOpenFaq] = useState(null)
+  
+  // 3D Ticket Parallax State
+  const [coords, setCoords] = useState({ x: 0, y: 0 })
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width - 0.5
+    const y = (e.clientY - rect.top) / rect.height - 0.5
+    setCoords({ x, y })
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    setCoords({ x: 0, y: 0 })
+    setIsHovered(false)
+  }
+
+  const getTicketStyle = () => {
+    const rx = isHovered ? (-coords.y * 25).toFixed(1) : 0
+    const ry = isHovered ? (coords.x * 25).toFixed(1) : 0
+    const scale = isHovered ? 1.03 : 1
+    
+    return {
+      transform: `rotateX(${rx}deg) rotateY(${ry}deg) scale(${scale})`,
+      transition: isHovered ? 'transform 0.08s ease-out' : 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
+      transformStyle: 'preserve-3d',
+    }
+  }
 
   useEffect(() => {
     getEvents()
@@ -134,47 +163,105 @@ export default function HomePage() {
             </div>
 
             {/* Right 3D Visual Column */}
-            <div className="lg:col-span-5 flex justify-center items-center">
-              <div className="idc-stage">
-                <div className="idc-mount"></div>
-                <div className="idc-rig">
-                  <div className="idc-strap"></div>
-                  <div className="idc-clip">
-                    <div className="idc-loop"></div>
-                    <div className="idc-pinch"></div>
+            <div className="lg:col-span-5 flex justify-center items-center h-[460px] relative overflow-visible">
+              <div 
+                className="relative w-full max-w-[440px] h-[360px] flex items-center justify-center ticket-container"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  perspective: '1200px',
+                  transformStyle: 'preserve-3d',
+                }}
+              >
+                {/* 3D Floating Shapes (Behind the ticket) */}
+                <div 
+                  className="absolute w-32 h-32 rounded-full sphere-orange animate-float-slow blur-[0.5px]"
+                  style={{
+                    top: '5%',
+                    left: '5%',
+                    zIndex: 1,
+                    transform: `translate3d(${-coords.x * 40}px, ${-coords.y * 40}px, 0)`,
+                    transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.8s ease',
+                  }} 
+                />
+                <div 
+                  className="absolute w-24 h-24 rounded-full sphere-purple animate-float-medium blur-[0.5px]"
+                  style={{
+                    bottom: '8%',
+                    right: '8%',
+                    zIndex: 1,
+                    transform: `translate3d(${coords.x * 30}px, ${coords.y * 30}px, 0)`,
+                    transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.8s ease',
+                  }} 
+                />
+                <div 
+                  className="absolute w-16 h-16 rounded-full sphere-teal animate-float-slow blur-[1px]"
+                  style={{
+                    bottom: '15%',
+                    left: '25%',
+                    zIndex: 1,
+                    transform: `translate3d(${-coords.x * 20}px, ${-coords.y * 20}px, 0)`,
+                    transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.8s ease',
+                  }} 
+                />
+                
+                {/* Gold 3D Torus/Rings */}
+                <div 
+                  className="absolute w-16 h-16 rounded-full ring-gold animate-float-medium"
+                  style={{
+                    top: '12%',
+                    right: '18%',
+                    zIndex: 1,
+                    transform: `translate3d(${coords.x * 15}px, ${coords.y * 15}px, 0) rotateX(55deg) rotateY(25deg)`,
+                    transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.8s ease',
+                  }} 
+                />
+                <div 
+                  className="absolute w-12 h-12 rounded-full ring-gold-small animate-float-slow"
+                  style={{
+                    bottom: '22%',
+                    left: '10%',
+                    zIndex: 1,
+                    transform: `translate3d(${-coords.x * 25}px, ${-coords.y * 25}px, 0) rotateX(-40deg) rotateY(35deg)`,
+                    transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.8s ease',
+                  }} 
+                />
+
+                {/* Glass Ticket Stub (In front) */}
+                <div 
+                  className="glass-ticket-stub"
+                  style={{
+                    ...getTicketStyle(),
+                    zIndex: 2
+                  }}
+                >
+                  {/* Left and Right Notches */}
+                  <div className="gts-notch-left"></div>
+                  <div className="gts-notch-right"></div>
+                  
+                  {/* Ticket Content */}
+                  <div className="gts-left-pane">
+                    <div className="gts-org">Amrita Vidyapeetham</div>
+                    <div className="gts-title">
+                      TECHFEST 2026
+                      <span>Admit One</span>
+                    </div>
+                    <div className="gts-meta">
+                      <div>📅 15 JUL 2026</div>
+                      <div>📍 NIT AUDITORIUM</div>
+                    </div>
                   </div>
-                  <div className="idc-card">
-                    <div className="idc-ribbon-clip">
-                      <div className="idc-ribbon">VIP PASS</div>
+
+                  {/* Ticket Divider */}
+                  <div className="gts-divider"></div>
+
+                  {/* Ticket Stub (Right Pane) */}
+                  <div className="gts-right-pane">
+                    <div className="gts-logo">EVENT<span>HUB</span></div>
+                    <div className="gts-barcode-container">
+                      <div className="gts-barcode"></div>
+                      <div className="gts-serial">#EHB-9812-2026</div>
                     </div>
-                    <div className="idc-card-top">
-                      <div className="idc-org">
-                        Amrita Vidyapeetham
-                        <b>TECH SUMMIT 2026</b>
-                      </div>
-                      <div className="idc-pass-pill">
-                        ENTRY
-                        <span>PASS</span>
-                      </div>
-                    </div>
-                    
-                    {/* Photo area */}
-                    <div className="idc-photo-wrap">
-                      <svg className="w-14 h-14 text-white/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                      </svg>
-                    </div>
-                    
-                    <div className="idc-name">
-                      Aarav <span>Sharma</span>
-                    </div>
-                    <div className="idc-role-line">Computer Science Student</div>
-                    
-                    <div className="idc-id-row">
-                      <span>ID: EHB-2026-9812</span>
-                      <span>ROLL: AM.EN.U4CSE</span>
-                    </div>
-                    <div className="idc-barcode"></div>
                   </div>
                 </div>
               </div>
