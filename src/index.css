@@ -195,17 +195,17 @@
   width: 440px;
   height: 250px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(13, 61, 58, 0.15);
   box-shadow: 
-    0 30px 60px rgba(13, 61, 58, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    0 30px 60px rgba(13, 61, 58, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(13, 61, 58, 0.05);
   position: relative;
   overflow: hidden;
-  color: #faf7f2;
+  color: #0d3d3a;
 }
 
 /* Glass shine gradient overlay */
@@ -215,9 +215,9 @@
   inset: 0;
   background: linear-gradient(
     125deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.02) 50%,
-    rgba(0, 0, 0, 0.25) 100%
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(13, 61, 58, 0.08) 100%
   );
   pointer-events: none;
   z-index: 1;
@@ -231,7 +231,7 @@
   background: linear-gradient(
     45deg,
     transparent 45%,
-    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.35) 50%,
     transparent 55%
   );
   transform: rotate(-35deg) translate(-50%, -50%);
@@ -252,7 +252,7 @@
   height: 30px;
   background: #faf7f2; /* Matches parent Warm Ivory background */
   z-index: 10;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(13, 61, 58, 0.15);
 }
 
 .gts-notch-left {
@@ -284,8 +284,8 @@
   font-weight: 800;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: #e8b060;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  color: #a84b2f;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
 }
 
 .gts-title {
@@ -294,14 +294,15 @@
   font-weight: 700;
   line-height: 1.15;
   margin: 12px 0;
-  text-shadow: 0 2px 4px rgba(13,61,58,0.12);
+  color: #0d3d3a;
+  text-shadow: 0 1px 2px rgba(13,61,58,0.05);
 }
 
 .gts-title span {
   font-family: 'Cabinet Grotesk', sans-serif;
   display: inline-block;
-  background: #e8b060;
-  color: #0d3d3a;
+  background: #0d3d3a;
+  color: #faf7f2;
   font-size: 8px;
   font-weight: 850;
   padding: 2.5px 7px;
@@ -316,14 +317,15 @@
   gap: 18px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 8.5px;
-  color: rgba(250, 247, 242, 0.75);
+  color: rgba(13, 61, 58, 0.8);
+  font-weight: 600;
 }
 
 /* Dashed vertical separator */
 .gts-divider {
   width: 0px;
   height: 80%;
-  border-left: 1.5px dashed rgba(250, 247, 242, 0.22);
+  border-left: 1.5px dashed rgba(13, 61, 58, 0.22);
   align-self: center;
   position: relative;
   z-index: 3;
@@ -347,10 +349,11 @@
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  color: #0d3d3a;
 }
 
 .gts-logo span {
-  color: #e8b060;
+  color: #c9923a;
 }
 
 .gts-barcode-container {
@@ -365,18 +368,19 @@
   width: 72px;
   height: 38px;
   background: repeating-linear-gradient(90deg,
-    #faf7f2 0px, #faf7f2 1.5px,
+    #0d3d3a 0px, #0d3d3a 1.5px,
     transparent 1.5px, transparent 4px,
-    #faf7f2 4px, #faf7f2 5px,
+    #0d3d3a 4px, #0d3d3a 5px,
     transparent 5px, transparent 7px);
-  opacity: 0.65;
+  opacity: 0.8;
 }
 
 .gts-serial {
   font-family: 'JetBrains Mono', monospace;
   font-size: 7px;
-  color: rgba(250, 247, 242, 0.45);
+  color: rgba(13, 61, 58, 0.6);
   letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
 /* ══════════ 3D FLOATING SHAPES ══════════ */
