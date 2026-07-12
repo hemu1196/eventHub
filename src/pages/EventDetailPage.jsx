@@ -408,9 +408,9 @@ export default function EventDetailPage() {
                 setShowPaymentModal(false);
                 completeRegistration(payId);
               }}
-              className="w-full py-3 rounded-xl bg-navy text-white hover:opacity-95 font-extrabold text-xs shadow-lg shadow-navy/20 transition-all flex items-center justify-center gap-2 mb-3"
+              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold to-gold-dark text-navy-dark hover:scale-[1.02] hover:shadow-gold/40 font-black text-sm uppercase tracking-wider shadow-lg shadow-gold/25 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 mb-3 cursor-pointer"
             >
-              I Have Completed Payment
+              <FiCheckCircle size={15} /> I Have Completed Payment
             </button>
 
             <button

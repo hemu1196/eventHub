@@ -4,9 +4,12 @@
   --color-ivory: #faf7f2;
   --color-ivory-dark: #f3ede3;
   --color-ivory-deep: #e8dfd1;
-  --color-teal: #0d2547; /* Navy Blue */
-  --color-teal-dark: #071529; /* Dark Navy */
-  --color-teal-light: #163763; /* Light Navy */
+  --color-teal: #0d2547; /* Fallback for legacy */
+  --color-teal-dark: #071529;
+  --color-teal-light: #163763;
+  --color-navy: #0d2547; /* Navy Blue */
+  --color-navy-dark: #071529; /* Dark Navy */
+  --color-navy-light: #163763; /* Light Navy */
   --color-gold: #c9923a;
   --color-gold-dark: #e8b060;
   --color-gold-light: #f5e3c8;
