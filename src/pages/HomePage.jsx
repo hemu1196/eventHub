@@ -195,7 +195,7 @@ export default function HomePage() {
                   }} 
                 />
                 <div 
-                  className="absolute w-16 h-16 rounded-full sphere-teal animate-float-slow blur-[1px]"
+                  className="absolute w-16 h-16 rounded-full sphere-navy animate-float-slow blur-[1px]"
                   style={{
                     bottom: '15%',
                     left: '25%',
