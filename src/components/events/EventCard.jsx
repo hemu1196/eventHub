@@ -17,7 +17,7 @@ const EventCard = ({ event }) => {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to top, rgba(13,61,58,0.7) 0%, transparent 60%)'
+          background: 'linear-gradient(to top, rgba(13,37,71,0.7) 0%, transparent 60%)'
         }} />
         {/* Category badge */}
         <div className="absolute top-3 left-3">
@@ -37,13 +37,13 @@ const EventCard = ({ event }) => {
 
       {/* Content */}
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-extrabold text-teal text-base mb-2 line-clamp-2 leading-snug group-hover:text-gold transition-colors duration-200">
+        <h3 className="font-extrabold text-navy text-base mb-2 line-clamp-2 leading-snug group-hover:text-gold transition-colors duration-200">
           {event.title}
         </h3>
 
         <div className="flex flex-col gap-2 mb-4">
           <div className="flex items-center gap-2 text-slate-600 font-semibold">
-            <FiCalendar size={13} className="text-teal" />
+            <FiCalendar size={13} className="text-navy" />
             <span className="text-xs">{formattedDate} • {event.time}</span>
           </div>
           <div className="flex items-center gap-2 text-slate-600 font-semibold">

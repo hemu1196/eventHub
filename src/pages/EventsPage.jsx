@@ -46,9 +46,9 @@ export default function EventsPage() {
       <div className="py-12 px-6" style={{ background: '#f3ede3', borderBottom: '1px solid #ddd3c4' }}>
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-2 text-xs text-slate-500 mb-4 font-semibold">
-            <span>Home</span><span>/</span><span style={{ color: '#0d3d3a' }}>Events</span>
+            <span>Home</span><span>/</span><span style={{ color: '#0d2547' }}>Events</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-black text-teal mb-3">
+          <h1 className="text-4xl md:text-5xl font-black text-navy mb-3">
             Discover <span className="gradient-text italic font-serif">Events</span>
           </h1>
           <p className="text-slate-600 text-base font-semibold">
@@ -83,7 +83,7 @@ export default function EventsPage() {
                   onClick={() => setSelectedCategory(cat)}
                   className="px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all duration-200 flex-shrink-0 cursor-pointer"
                   style={{
-                    background: selectedCategory === cat ? '#0d3d3a' : '#faf7f2',
+                    background: selectedCategory === cat ? '#0d2547' : '#faf7f2',
                     color: selectedCategory === cat ? '#faf7f2' : '#4a3f35',
                     border: selectedCategory === cat ? 'none' : '1px solid #ddd3c4',
                   }}
@@ -100,8 +100,8 @@ export default function EventsPage() {
               <button key={mode} onClick={() => setViewMode(mode)}
                 className="p-2 rounded-md transition-all duration-200 cursor-pointer"
                 style={{
-                  background: viewMode === mode ? 'rgba(13,61,58,0.15)' : 'transparent',
-                  color: viewMode === mode ? '#0d3d3a' : '#8a7a6d',
+                  background: viewMode === mode ? 'rgba(13,37,71,0.15)' : 'transparent',
+                  color: viewMode === mode ? '#0d2547' : '#8a7a6d',
                 }}>
                 <Icon size={15} />
               </button>
@@ -112,8 +112,8 @@ export default function EventsPage() {
         {/* Results count */}
         <div className="flex items-center justify-between mb-6">
           <p className="text-sm text-slate-600 font-semibold">
-            Showing <span className="text-teal font-extrabold">{filtered.length}</span> events
-            {selectedCategory !== 'All' && <span> in <span className="font-extrabold" style={{ color: '#0d3d3a' }}>{selectedCategory}</span></span>}
+            Showing <span className="text-navy font-extrabold">{filtered.length}</span> events
+            {selectedCategory !== 'All' && <span> in <span className="font-extrabold" style={{ color: '#0d2547' }}>{selectedCategory}</span></span>}
           </p>
         </div>
 
@@ -122,13 +122,13 @@ export default function EventsPage() {
           <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
             {[...Array(6)].map((_, i) => (
               <div key={i} className="glass-card h-80 animate-pulse"
-                style={{ background: 'rgba(13,61,58,0.04)' }} />
+                style={{ background: 'rgba(13,37,71,0.04)' }} />
             ))}
           </div>
         ) : filtered.length === 0 ? (
           <div className="text-center py-24">
-            <FiCalendar size={56} className="mx-auto mb-4 opacity-25 text-teal" />
-            <h3 className="text-xl font-extrabold text-teal mb-2">No Events Found</h3>
+            <FiCalendar size={56} className="mx-auto mb-4 opacity-25 text-navy" />
+            <h3 className="text-xl font-extrabold text-navy mb-2">No Events Found</h3>
             <p className="text-slate-600 mb-6 font-semibold">Try adjusting your search or filter criteria</p>
             <button onClick={() => { setSearch(''); setSelectedCategory('All') }}
               className="btn-primary">

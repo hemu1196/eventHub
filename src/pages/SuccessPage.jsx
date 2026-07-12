@@ -32,16 +32,16 @@ export default function SuccessPage() {
         <div className="text-center mb-10 pt-10">
           <div className="relative inline-block mb-6">
             <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto"
-              style={{ background: 'rgba(13,61,58,0.06)', border: '2px solid rgba(13,61,58,0.2)' }}>
-              <FiCheckCircle size={44} className="text-teal" />
+              style={{ background: 'rgba(13,37,71,0.06)', border: '2px solid rgba(13,37,71,0.2)' }}>
+              <FiCheckCircle size={44} className="text-navy" />
             </div>
             {/* Pulse rings */}
             <div className="absolute inset-0 rounded-full animate-ping opacity-10"
-              style={{ background: 'rgba(13,61,58,0.2)', animationDuration: '2s' }} />
+              style={{ background: 'rgba(13,37,71,0.2)', animationDuration: '2s' }} />
           </div>
-          <h1 className="text-4xl font-black text-teal mb-3">
+          <h1 className="text-4xl font-black text-navy mb-3">
             Registration <span style={{
-              background: 'linear-gradient(135deg, #0d3d3a, #c9923a)',
+              background: 'linear-gradient(135deg, #0d2547, #c9923a)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>Confirmed!</span>
@@ -53,11 +53,11 @@ export default function SuccessPage() {
 
         {/* Registration ID & Ticket Card */}
         <div className="glass-card p-6 mb-5 text-center flex flex-col md:flex-row items-center justify-between gap-6"
-          style={{ background: 'linear-gradient(135deg, rgba(13,61,58,0.06) 0%, rgba(201,146,58,0.04) 100%)', borderRadius: '1.25rem' }}>
+          style={{ background: 'linear-gradient(135deg, rgba(13,37,71,0.06) 0%, rgba(201,146,58,0.04) 100%)', borderRadius: '1.25rem' }}>
           
           <div className="flex-1 text-center md:text-left">
             <div className="text-xs text-slate-500 uppercase tracking-widest mb-2 font-bold">Registration ID</div>
-            <div className="text-3xl font-black tracking-wider mb-2 text-teal">
+            <div className="text-3xl font-black tracking-wider mb-2 text-navy">
               {registration.registration_id}
             </div>
             <div className="text-xs text-slate-500 mb-4 font-semibold">Issued on {issuedAt}</div>
@@ -66,18 +66,18 @@ export default function SuccessPage() {
             <div className="inline-flex flex-col gap-1 text-left p-3 rounded-xl bg-slate-50 border border-border-ivory">
               <div className="text-[10px] text-slate-500 uppercase font-bold">Payment Details</div>
               <div className="text-xs text-slate-600 font-semibold">
-                Method: <span className="font-extrabold text-teal uppercase">{event?.fee === 0 ? 'FREE' : 'UPI GATEWAY'}</span>
+                Method: <span className="font-extrabold text-navy uppercase">{event?.fee === 0 ? 'FREE' : 'UPI GATEWAY'}</span>
               </div>
               <div className="text-xs text-slate-600 font-semibold">
-                TXN ID: <span className="font-mono text-teal font-extrabold">{registration.payment_id || 'FREE'}</span>
+                TXN ID: <span className="font-mono text-navy font-extrabold">{registration.payment_id || 'FREE'}</span>
               </div>
             </div>
           </div>
 
           {/* QR Code Container */}
-          <div className="flex flex-col items-center gap-2 p-4 bg-white rounded-2xl flex-shrink-0" style={{ boxShadow: '0 6px 15px rgba(13,61,58,0.08)', border: '1px solid #ddd3c4' }}>
+          <div className="flex flex-col items-center gap-2 p-4 bg-white rounded-2xl flex-shrink-0" style={{ boxShadow: '0 6px 15px rgba(13,37,71,0.08)', border: '1px solid #ddd3c4' }}>
             <img 
-              src={`https://api.qrserver.com/v1/create-qr-code/?size=130x130&color=0d3d3a&data=${registration.registration_id}`} 
+              src={`https://api.qrserver.com/v1/create-qr-code/?size=130x130&color=0d2547&data=${registration.registration_id}`} 
               alt="Registration QR Code" 
               className="w-32 h-32"
             />
@@ -94,10 +94,10 @@ export default function SuccessPage() {
               <img src={event.image} alt={event?.title} className="w-full h-full object-cover" />
             </div>
           )}
-          <h4 className="text-xl font-black text-teal mb-4">{event?.title}</h4>
+          <h4 className="text-xl font-black text-navy mb-4">{event?.title}</h4>
           <div className="flex flex-col gap-3">
             {[
-              { icon: FiCalendar, label: 'Date', value: formattedDate, color: '#0d3d3a' },
+              { icon: FiCalendar, label: 'Date', value: formattedDate, color: '#0d2547' },
               { icon: FiMapPin, label: 'Venue', value: event?.venue, color: '#c9923a' },
             ].filter(item => item.value).map(({ icon: Icon, label, value, color }) => (
               <div key={label} className="flex items-center gap-3">
@@ -107,7 +107,7 @@ export default function SuccessPage() {
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-semibold">{label}</div>
-                  <div className="text-sm font-extrabold text-teal">{value}</div>
+                  <div className="text-sm font-extrabold text-navy">{value}</div>
                 </div>
               </div>
             ))}
@@ -132,7 +132,7 @@ export default function SuccessPage() {
                   <Icon size={13} className="text-slate-500" />
                   <span className="text-xs text-slate-500 font-semibold">{label}</span>
                 </div>
-                <span className="text-sm font-extrabold text-teal">{value}</span>
+                <span className="text-sm font-extrabold text-navy">{value}</span>
               </div>
             ))}
           </div>

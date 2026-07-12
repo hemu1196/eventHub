@@ -34,10 +34,10 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
             <div className="w-9 h-9 rounded-xl flex items-center justify-center" 
-              style={{ background: 'linear-gradient(135deg, #0d3d3a, #145c57)' }}>
+              style={{ background: 'linear-gradient(135deg, #0d2547, #163763)' }}>
               <FiCalendar className="text-white text-base" />
             </div>
-            <span className="font-bold text-xl text-teal">
+            <span className="font-bold text-xl text-navy">
               Event<span style={{ color: '#c9923a' }}>Hub</span>
             </span>
           </Link>
@@ -50,10 +50,10 @@ const Navbar = () => {
                 to={link.to}
                 className="text-sm font-bold transition-colors duration-200"
                 style={{
-                  color: location.pathname === link.to ? '#0d3d3a' : '#4a3f35',
+                  color: location.pathname === link.to ? '#0d2547' : '#4a3f35',
                 }}
-                onMouseEnter={e => e.target.style.color = '#0d3d3a'}
-                onMouseLeave={e => e.target.style.color = location.pathname === link.to ? '#0d3d3a' : '#4a3f35'}
+                onMouseEnter={e => e.target.style.color = '#0d2547'}
+                onMouseLeave={e => e.target.style.color = location.pathname === link.to ? '#0d2547' : '#4a3f35'}
               >
                 {link.label}
               </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
  
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-teal p-2"
+            className="md:hidden text-navy p-2"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
@@ -85,7 +85,7 @@ const Navbar = () => {
               {navLinks.map(link => (
                 <Link key={link.to} to={link.to}
                   className="text-sm font-bold px-2 py-2"
-                  style={{ color: location.pathname === link.to ? '#0d3d3a' : '#4a3f35' }}>
+                  style={{ color: location.pathname === link.to ? '#0d2547' : '#4a3f35' }}>
                   {link.label}
                 </Link>
               ))}

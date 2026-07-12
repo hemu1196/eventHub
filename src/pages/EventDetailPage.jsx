@@ -152,7 +152,7 @@ export default function EventDetailPage() {
   if (loading) return (
     <div className="min-h-screen mesh-bg pt-20 flex items-center justify-center">
       <div className="text-center">
-        <div className="w-12 h-12 rounded-full border-2 border-teal border-t-transparent animate-spin mx-auto mb-4" />
+        <div className="w-12 h-12 rounded-full border-2 border-navy border-t-transparent animate-spin mx-auto mb-4" />
         <p className="text-slate-600 font-semibold">Loading event details...</p>
       </div>
     </div>
@@ -162,7 +162,7 @@ export default function EventDetailPage() {
     <div className="min-h-screen mesh-bg pt-20 flex items-center justify-center text-center px-6">
       <div>
         <div className="text-6xl mb-4">🔍</div>
-        <h2 className="text-2xl font-bold text-teal mb-2">Event Not Found</h2>
+        <h2 className="text-2xl font-bold text-navy mb-2">Event Not Found</h2>
         <p className="text-slate-600 mb-6 font-semibold">The event you're looking for doesn't exist.</p>
         <Link to="/events" className="btn-primary">Browse Events</Link>
       </div>
@@ -178,7 +178,7 @@ export default function EventDetailPage() {
         <img src={event.image || 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80'}
           alt={event.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to bottom, rgba(13,61,58,0.15) 0%, rgba(13,61,58,0.92) 100%)'
+          background: 'linear-gradient(to bottom, rgba(13,37,71,0.15) 0%, rgba(13,37,71,0.92) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
           <div className="max-w-7xl mx-auto">
@@ -207,8 +207,8 @@ export default function EventDetailPage() {
             {/* Info Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
-                { icon: FiCalendar, label: 'Date', value: event.date ? format(new Date(event.date), 'MMM dd, yyyy') : 'TBA', color: '#0d3d3a' },
-                { icon: FiClock, label: 'Time', value: event.time || 'TBA', color: '#145c57' },
+                { icon: FiCalendar, label: 'Date', value: event.date ? format(new Date(event.date), 'MMM dd, yyyy') : 'TBA', color: '#0d2547' },
+                { icon: FiClock, label: 'Time', value: event.time || 'TBA', color: '#163763' },
                 { icon: FiMapPin, label: 'Venue', value: event.venue, color: '#c9923a' },
                 { icon: FiUsers, label: 'Seats', value: `${event.seats} seats`, color: '#a84b2f' },
               ].map(({ icon: Icon, label, value, color }) => (
@@ -219,26 +219,26 @@ export default function EventDetailPage() {
                     <Icon size={16} style={{ color }} />
                   </div>
                   <div className="text-xs text-slate-500 mb-1 font-semibold">{label}</div>
-                  <div className="text-xs font-extrabold text-teal leading-tight">{value}</div>
+                  <div className="text-xs font-extrabold text-navy leading-tight">{value}</div>
                 </div>
               ))}
             </div>
 
             {/* Description */}
             <div className="glass-card p-6" style={{ borderRadius: '1.25rem' }}>
-              <h3 className="text-lg font-bold text-teal mb-4">About This Event</h3>
+              <h3 className="text-lg font-bold text-navy mb-4">About This Event</h3>
               <p className="text-slate-600 leading-relaxed text-sm font-semibold">{event.description}</p>
             </div>
 
             {/* Organizer */}
             <div className="glass-card p-5 flex items-center gap-4" style={{ borderRadius: '1.25rem' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: 'rgba(13, 61, 58, 0.05)', border: '1px solid rgba(13, 61, 58, 0.2)' }}>
-                <FiUser size={20} className="text-teal" />
+                style={{ background: 'rgba(13, 37, 71, 0.05)', border: '1px solid rgba(13, 37, 71, 0.2)' }}>
+                <FiUser size={20} className="text-navy" />
               </div>
               <div>
                 <div className="text-xs text-slate-500 mb-0.5 font-semibold">Organized by</div>
-                <div className="font-extrabold text-teal">{event.organizer || 'Event Committee'}</div>
+                <div className="font-extrabold text-navy">{event.organizer || 'Event Committee'}</div>
               </div>
             </div>
           </div>
@@ -247,10 +247,10 @@ export default function EventDetailPage() {
           <div className="lg:col-span-1">
             <div className="glass-card p-6 sticky top-24" style={{ borderRadius: '1.25rem' }}>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-teal">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-navy">
                   <FiCheckCircle size={14} className="text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-teal">Register Now</h3>
+                <h3 className="text-lg font-bold text-navy">Register Now</h3>
               </div>
 
               {submitError && (
@@ -326,7 +326,7 @@ export default function EventDetailPage() {
 
                 {/* Fee reminder */}
                 <div className="p-3 rounded-xl text-center text-xs font-bold"
-                  style={{ background: 'rgba(13,61,58,0.05)', border: '1px solid rgba(13,61,58,0.15)', color: '#0d3d3a' }}>
+                  style={{ background: 'rgba(13,37,71,0.05)', border: '1px solid rgba(13,37,71,0.15)', color: '#0d2547' }}>
                   Registration Fee: <span className="font-extrabold">{event.fee === 0 ? 'FREE' : `₹${event.fee}`}</span>
                 </div>
 
@@ -347,7 +347,7 @@ export default function EventDetailPage() {
       {showPaymentModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
           <div className="w-full max-w-sm bg-white border border-border-ivory overflow-hidden p-6 rounded-2xl shadow-glow text-center">
-            <h3 className="text-xl font-black text-teal mb-1">UPI Payment Gateway</h3>
+            <h3 className="text-xl font-black text-navy mb-1">UPI Payment Gateway</h3>
             <p className="text-[11px] text-slate-500 max-w-xs mx-auto mb-4">
               Scan the QR code below or use your favorite UPI banking app to make the payment.
             </p>
@@ -376,7 +376,7 @@ export default function EventDetailPage() {
                   <div className="flex items-center justify-between p-3 rounded-xl border border-border-ivory bg-slate-50 mb-3">
                     <div className="text-left">
                       <span className="text-[8px] text-slate-500 font-bold uppercase tracking-wider block">UPI ID</span>
-                      <span className="text-xs font-mono text-teal font-bold select-all">8309305811@ybl</span>
+                      <span className="text-xs font-mono text-navy font-bold select-all">8309305811@ybl</span>
                     </div>
                     <button
                       type="button"
@@ -384,7 +384,7 @@ export default function EventDetailPage() {
                         navigator.clipboard.writeText('8309305811@ybl');
                         alert('UPI ID copied to clipboard!');
                       }}
-                      className="px-2.5 py-1 rounded-lg text-[9px] font-extrabold uppercase bg-white hover:bg-slate-100 text-teal border border-border-ivory active:scale-95 transition-all"
+                      className="px-2.5 py-1 rounded-lg text-[9px] font-extrabold uppercase bg-white hover:bg-slate-100 text-navy border border-border-ivory active:scale-95 transition-all"
                     >
                       Copy ID
                     </button>
@@ -393,7 +393,7 @@ export default function EventDetailPage() {
                   {/* Open in App Deep Link */}
                   <a
                     href={upiLink}
-                    className="w-full py-2.5 mb-4 rounded-xl border border-teal/20 hover:bg-teal/5 font-extrabold text-xs text-teal transition-all flex items-center justify-center gap-1.5"
+                    className="w-full py-2.5 mb-4 rounded-xl border border-navy/20 hover:bg-navy/5 font-extrabold text-xs text-navy transition-all flex items-center justify-center gap-1.5"
                   >
                     Open in UPI App
                   </a>
@@ -408,14 +408,14 @@ export default function EventDetailPage() {
                 setShowPaymentModal(false);
                 completeRegistration(payId);
               }}
-              className="w-full py-3 rounded-xl bg-teal text-white hover:opacity-95 font-extrabold text-xs shadow-lg shadow-teal/20 transition-all flex items-center justify-center gap-2 mb-3"
+              className="w-full py-3 rounded-xl bg-navy text-white hover:opacity-95 font-extrabold text-xs shadow-lg shadow-navy/20 transition-all flex items-center justify-center gap-2 mb-3"
             >
               I Have Completed Payment
             </button>
 
             <button
               onClick={() => setShowPaymentModal(false)}
-              className="w-full py-2 text-slate-500 hover:text-teal font-bold text-[11px] transition-all"
+              className="w-full py-2 text-slate-500 hover:text-navy font-bold text-[11px] transition-all"
             >
               Cancel Booking
             </button>

@@ -5,9 +5,9 @@ export const generateRegistrationPDF = (registration, event) => {
   const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' })
   
   const W = 210
-  const teal = [13, 61, 58]
+  const navy = [13, 37, 71] /* Navy Blue */
   const gold = [201, 146, 58]
-  const darkTeal = [6, 31, 29]
+  const darkNavy = [7, 21, 41] /* Dark Navy */
   const bgIvory = [250, 247, 242]
   const textDark = [26, 20, 16]
   const textMuted = [138, 122, 109]
@@ -19,9 +19,9 @@ export const generateRegistrationPDF = (registration, event) => {
   doc.rect(0, 0, W, 297, 'F')
 
   // Top header band
-  doc.setFillColor(...teal)
+  doc.setFillColor(...navy)
   doc.rect(0, 0, W, 60, 'F')
-  doc.setFillColor(...darkTeal)
+  doc.setFillColor(...darkNavy)
   doc.rect(120, 0, W - 120, 60, 'F')
 
   // Decorative circles
@@ -43,7 +43,7 @@ export const generateRegistrationPDF = (registration, event) => {
   // Registration Confirmed badge
   doc.setFillColor(...white)
   doc.roundedRect(20, 43, 60, 10, 2, 2, 'F')
-  doc.setTextColor(...teal)
+  doc.setTextColor(...navy)
   doc.setFont('helvetica', 'bold')
   doc.setFontSize(9)
   doc.text('✓  REGISTRATION CONFIRMED', 22, 49.5)
@@ -69,7 +69,7 @@ export const generateRegistrationPDF = (registration, event) => {
   doc.setLineWidth(0.5)
   doc.roundedRect(15, 70, W - 30, 55, 4, 4, 'S')
 
-  doc.setFillColor(...teal)
+  doc.setFillColor(...navy)
   doc.roundedRect(15, 70, 4, 55, 4, 4, 'F')
   doc.rect(16, 70, 3, 55, 'F')
 
@@ -78,7 +78,7 @@ export const generateRegistrationPDF = (registration, event) => {
   doc.setFont('helvetica', 'bold')
   doc.text('EVENT DETAILS', 28, 81)
 
-  doc.setTextColor(...teal)
+  doc.setTextColor(...navy)
   doc.setFontSize(15)
   doc.text(event?.title || registration.events?.title || 'Event Title', 28, 91)
 
@@ -140,11 +140,11 @@ export const generateRegistrationPDF = (registration, event) => {
   doc.text('PAYMENT STATUS', 75, 228)
   doc.text('TRANSACTION ID', 75, 240)
 
-  doc.setTextColor(...teal)
+  doc.setTextColor(...navy)
   doc.setFontSize(12)
   doc.text(event?.fee === 0 ? 'FREE' : `₹ ${event?.fee || 0}`, 25, 238)
   
-  doc.setFillColor(...teal)
+  doc.setFillColor(...navy)
   doc.roundedRect(75, 231, 16, 5, 1, 1, 'F')
   doc.setTextColor(...white)
   doc.setFontSize(6.5)
@@ -163,7 +163,7 @@ export const generateRegistrationPDF = (registration, event) => {
   doc.setDrawColor(...borderIvory)
   doc.roundedRect(qrX - 2, qrY - 2, 28, 28, 2, 2, 'S')
   
-  doc.setFillColor(...teal)
+  doc.setFillColor(...navy)
   // Draw three outer corner squares
   doc.rect(qrX, qrY, 7, 7, 'F')
   doc.rect(qrX + 17, qrY, 7, 7, 'F')
@@ -174,7 +174,7 @@ export const generateRegistrationPDF = (registration, event) => {
   doc.rect(qrX + 19, qrY + 2, 3, 3, 'F')
   doc.rect(qrX + 2, qrY + 19, 3, 3, 'F')
   
-  doc.setFillColor(...teal)
+  doc.setFillColor(...navy)
   doc.rect(qrX + 3, qrY + 3, 1, 1, 'F')
   doc.rect(qrX + 20, qrY + 3, 1, 1, 'F')
   doc.rect(qrX + 3, qrY + 20, 1, 1, 'F')
@@ -191,7 +191,7 @@ export const generateRegistrationPDF = (registration, event) => {
   doc.rect(qrX + 22, qrY + 13, 2, 3, 'F')
 
   // Footer
-  doc.setFillColor(...teal)
+  doc.setFillColor(...navy)
   doc.rect(0, 270, W, 27, 'F')
   doc.setTextColor(243, 237, 227)
   doc.setFontSize(8)

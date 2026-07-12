@@ -102,7 +102,7 @@ export default function HomePage() {
         {/* Decorative orbs */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-float"
-            style={{ background: 'radial-gradient(circle, #0d3d3a, transparent)', filter: 'blur(60px)' }} />
+            style={{ background: 'radial-gradient(circle, #0d2547, transparent)', filter: 'blur(60px)' }} />
           <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full opacity-10 animate-float"
             style={{ background: 'radial-gradient(circle, #c9923a, transparent)', filter: 'blur(50px)', animationDelay: '3s' }} />
           <div className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full opacity-5 animate-float"
@@ -110,7 +110,7 @@ export default function HomePage() {
           {/* Grid pattern */}
           <div className="absolute inset-0 opacity-[0.02]"
             style={{
-              backgroundImage: 'linear-gradient(rgba(13,61,58,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(13,61,58,0.1) 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(rgba(13,37,71,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(13,37,71,0.1) 1px, transparent 1px)',
               backgroundSize: '60px 60px',
             }} />
         </div>
@@ -122,12 +122,12 @@ export default function HomePage() {
             <div className="lg:col-span-7 text-left">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-8 border"
-                style={{ background: 'rgba(13, 61, 58, 0.04)', borderColor: 'rgba(13, 61, 58, 0.12)', color: '#0d3d3a' }}>
+                style={{ background: 'rgba(13, 37, 71, 0.04)', borderColor: 'rgba(13, 37, 71, 0.12)', color: '#0d2547' }}>
                 <FiZap size={12} className="text-gold" />
                 Premium Campus Event & Ticketing Portal
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-extrabold text-teal mb-6 leading-[1.05] tracking-tight">
+              <h1 className="text-5xl md:text-7xl font-extrabold text-navy mb-6 leading-[1.05] tracking-tight">
                 Discover & <span className="gradient-text italic font-serif">Experience</span>
                 <br />Amazing College Events
               </h1>
@@ -150,11 +150,11 @@ export default function HomePage() {
                 {STATS.map(({ value, label, icon: Icon, color }) => (
                   <div key={label} className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ background: 'rgba(13, 61, 58, 0.04)', border: '1px solid rgba(13, 61, 58, 0.1)' }}>
-                      <Icon size={18} className="text-teal" />
+                      style={{ background: 'rgba(13, 37, 71, 0.04)', border: '1px solid rgba(13, 37, 71, 0.1)' }}>
+                      <Icon size={18} className="text-navy" />
                     </div>
                     <div>
-                      <div className="text-xl font-black text-teal">{value}</div>
+                      <div className="text-xl font-black text-navy">{value}</div>
                       <div className="text-xs text-slate-500 font-semibold">{label}</div>
                     </div>
                   </div>
@@ -281,11 +281,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-4"
-              style={{ background: 'rgba(13, 61, 58, 0.04)', border: '1px solid rgba(13, 61, 58, 0.12)', color: '#0d3d3a' }}>
+              style={{ background: 'rgba(13, 37, 71, 0.04)', border: '1px solid rgba(13, 37, 71, 0.12)', color: '#0d2547' }}>
               <FiAward size={12} className="text-gold" />
               Event Categories
             </div>
-            <h2 className="text-4xl font-black text-teal mb-4">
+            <h2 className="text-4xl font-black text-navy mb-4">
               Explore by <span className="gradient-text italic font-serif">Category</span>
             </h2>
             <p className="text-slate-600 max-w-xl mx-auto">
@@ -300,7 +300,7 @@ export default function HomePage() {
                 style={{ '--hover-border': cat.color }}>
                 <div className="text-4xl">{cat.icon}</div>
                 <div>
-                  <div className="font-extrabold text-teal text-sm">{cat.name}</div>
+                  <div className="font-extrabold text-navy text-sm">{cat.name}</div>
                   <div className="text-xs font-semibold mt-0.5" style={{ color: cat.color }}>{cat.count}</div>
                 </div>
               </Link>
@@ -315,11 +315,11 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-4"
-                style={{ background: 'rgba(13, 61, 58, 0.04)', border: '1px solid rgba(13, 61, 58, 0.12)', color: '#0d3d3a' }}>
+                style={{ background: 'rgba(13, 37, 71, 0.04)', border: '1px solid rgba(13, 37, 71, 0.12)', color: '#0d2547' }}>
                 <FiCalendar size={12} className="text-gold" />
                 Upcoming Events
               </div>
-              <h2 className="text-4xl font-black text-teal">
+              <h2 className="text-4xl font-black text-navy">
                 Featured <span className="gradient-text italic font-serif">Events</span>
               </h2>
             </div>
@@ -349,7 +349,7 @@ export default function HomePage() {
               <FiStar size={12} />
               Testimonials
             </div>
-            <h2 className="text-4xl font-black text-teal mb-4">
+            <h2 className="text-4xl font-black text-navy mb-4">
               What Students <span className="gradient-text italic font-serif">Are Saying</span>
             </h2>
           </div>
@@ -369,7 +369,7 @@ export default function HomePage() {
                     {t.avatar}
                   </div>
                   <div>
-                    <div className="font-extrabold text-teal text-sm">{t.name}</div>
+                    <div className="font-extrabold text-navy text-sm">{t.name}</div>
                     <div className="text-xs text-slate-500 font-semibold">{t.role}</div>
                     <div className="text-xs font-bold" style={{ color: t.color }}>{t.college}</div>
                   </div>
@@ -384,7 +384,7 @@ export default function HomePage() {
       <section className="py-24 px-6 bg-ivory-dark border-t border-b border-border-ivory">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-black text-teal mb-4">
+            <h2 className="text-4xl font-black text-navy mb-4">
               Frequently Asked <span className="gradient-text italic font-serif">Questions</span>
             </h2>
             <p className="text-slate-600 font-semibold">Everything you need to know about EventHub</p>
@@ -398,13 +398,13 @@ export default function HomePage() {
                   className="w-full px-6 py-5 flex items-center justify-between text-left"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
-                  <span className="font-extrabold text-teal text-sm pr-4">{faq.q}</span>
+                  <span className="font-extrabold text-navy text-sm pr-4">{faq.q}</span>
                   <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300"
                     style={{
-                      background: openFaq === i ? 'rgba(13, 61, 58, 0.1)' : 'rgba(13, 61, 58, 0.04)',
+                      background: openFaq === i ? 'rgba(13, 37, 71, 0.1)' : 'rgba(13, 37, 71, 0.04)',
                       transform: openFaq === i ? 'rotate(180deg)' : 'none',
                     }}>
-                    <FiChevronDown size={14} className="text-teal" />
+                    <FiChevronDown size={14} className="text-navy" />
                   </div>
                 </button>
                 {openFaq === i && (
@@ -422,12 +422,12 @@ export default function HomePage() {
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="rounded-2xl p-12 text-center relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #0d3d3a 0%, #061f1d 100%)', border: '1px solid #c9923a' }}>
+            style={{ background: 'linear-gradient(135deg, #0d2547 0%, #071529 100%)', border: '1px solid #c9923a' }}>
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-0 left-0 w-64 h-64 rounded-full opacity-10"
                 style={{ background: 'radial-gradient(circle, #e8b060, transparent)', filter: 'blur(40px)' }} />
               <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full opacity-10"
-                style={{ background: 'radial-gradient(circle, #145c57, transparent)', filter: 'blur(40px)' }} />
+                style={{ background: 'radial-gradient(circle, #163763, transparent)', filter: 'blur(40px)' }} />
             </div>
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
@@ -436,7 +436,7 @@ export default function HomePage() {
               <p className="text-slate-300 mb-8 max-w-xl mx-auto font-medium">
                 Join thousands of students who use EventHub to discover amazing events and create unforgettable memories.
               </p>
-              <Link to="/events" className="btn-primary text-base px-8 py-4 bg-white text-teal hover:bg-slate-100 hover:text-teal shadow-none">
+              <Link to="/events" className="btn-primary text-base px-8 py-4 bg-white text-navy hover:bg-slate-100 hover:text-navy shadow-none">
                 Explore All Events <FiArrowRight size={16} />
               </Link>
             </div>
