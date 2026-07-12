@@ -3,14 +3,14 @@ import { FiCalendar, FiMail, FiPhone, FiMapPin, FiTwitter, FiGithub, FiLinkedin,
 
 const Footer = () => {
   return (
-    <footer style={{ background: '#061f1d', borderTop: '1px solid #c9923a' }}>
+    <footer style={{ background: '#071529', borderTop: '1px solid #c9923a' }}>
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
               <div className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #0d3d3a, #145c57)' }}>
+                style={{ background: 'linear-gradient(135deg, #0d2547, #163763)' }}>
                 <FiCalendar className="text-white text-base" />
               </div>
               <span className="font-bold text-xl text-white">
